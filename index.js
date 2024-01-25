@@ -14,7 +14,7 @@ const clientsecret = "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"
 
 
 app.use(cors({
-    origin:"http://auth-client-seven.vercel.app",
+    origin:"https://auth-client-seven.vercel.app",
     methods:"GET,POST,PUT,DELETE",
     credentials:true
 }));
