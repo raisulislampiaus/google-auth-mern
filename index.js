@@ -14,7 +14,7 @@ const clientsecret = "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"
 
 
 app.use(cors({
-    origin:"https://auth-client-seven.vercel.app",
+    origin:"http://auth-client-seven.vercel.app",
     methods:"GET,POST,PUT,DELETE",
     credentials:true
 }));
@@ -74,8 +74,8 @@ passport.deserializeUser((user,done)=>{
 app.get("/auth/google",passport.authenticate("google",{scope:["profile","email"]}));
 
 app.get("/auth/google/callback",passport.authenticate("google",{
-    successRedirect:"https://auth-client-seven.vercel.app/dashboard",
-    failureRedirect:"https://auth-client-seven.vercel.app/login"
+    successRedirect:"http://auth-client-seven.vercel.app/dashboard",
+    failureRedirect:"http://auth-client-seven.vercel.app/login"
 }))
 
 app.get("/login/sucess",async(req,res)=>{
@@ -90,7 +90,7 @@ app.get("/login/sucess",async(req,res)=>{
 app.get("/logout",(req,res,next)=>{
     req.logout(function(err){
         if(err){return next(err)}
-        res.redirect("https://auth-client-seven.vercel.app");
+        res.redirect("http://auth-client-seven.vercel.app");
     })
 })
 
