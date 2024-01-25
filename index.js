@@ -12,7 +12,10 @@ const userdb = require("./model/userSchema")
 const clientid = "450212971091-7m46d2q47tg2o823o3sg821g1est0iaj.apps.googleusercontent.com"
 const clientsecret = "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"
 
-
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://auth-client-seven.vercel.app")
+  next()
+})
 app.use(cors({
     origin:"https://auth-client-seven.vercel.app",
     methods:"GET,POST,PUT,DELETE",
