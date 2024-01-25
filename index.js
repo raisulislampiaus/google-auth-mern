@@ -90,7 +90,7 @@ app.get("/login/sucess",async(req,res)=>{
 app.get("/logout",(req,res,next)=>{
     req.logout(function(err){
         if(err){return next(err)}
-        res.redirect("http://auth-client-seven.vercel.app");
+        res.redirect("https://auth-client-seven.vercel.app");
     })
 })
 
